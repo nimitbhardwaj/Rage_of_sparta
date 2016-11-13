@@ -5,8 +5,6 @@ int *KMP(const std::string &S, const std::string &T)
     int sz = S.size(), szt = T.size();
     int *A = new int[sz]();
     int *B = __lookUpTable(T);
-    for(int i = 0; i < szt; i++)
-        std::cout << B[i] << std::endl;
     A[0] = 0;
     int i = 0, j = 0;
     while(i < sz)
