@@ -1,10 +1,12 @@
 #include "rage_of_sparta.h"
-int *KMP(const std::string S, const std::string T)
+int *KMP(const std::string &S, const std::string &T)
 {
     //Array A need to be deleted
     int sz = S.size(), szt = T.size();
-    int *A = new int[sz];
+    int *A = new int[sz]();
     int *B = __lookUpTable(T);
+    for(int i = 0; i < szt; i++)
+        std::cout << B[i] << std::endl;
     A[0] = 0;
     int i = 0, j = 0;
     while(i < sz)
@@ -33,7 +35,7 @@ int *__lookUpTable(const std::string &T)
 {
     //array is needed to be freed
     int sz = T.size();
-    int *B = new int[sz];
+    int *B = new int[sz]();
     int j = 0;
     B[0] = 0;
     for(int i = 1; i < sz; i++)
