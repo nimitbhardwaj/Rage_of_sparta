@@ -2,6 +2,7 @@
 int *KMP(const std::string &S, const std::string &T)
 {
     //Array A need to be deleted
+    //Requires string
     int sz = S.size(), szt = T.size();
     int *A = new int[sz]();
     int *B = __lookUpTable(T);
@@ -32,6 +33,7 @@ int *KMP(const std::string &S, const std::string &T)
 int *__lookUpTable(const std::string &T)
 {
     //array is needed to be freed
+    //Requires String, and used by KMP function
     int sz = T.size();
     int *B = new int[sz]();
     int j = 0;
@@ -57,4 +59,22 @@ int *__lookUpTable(const std::string &T)
         }
     }
     return B;
+}
+
+bool *simple_sieve(int n)
+{
+    //Array returned needed to be freed
+    //Requires cstring
+    bool *A = new bool[n + 5];
+    memset(A, true, (n + 5) * sizeof(bool));
+    A[0] = A[1] = false;
+    for(int i = 2; i * i <= n; i++)
+    {
+        if(A[i] == true)
+            for(int j = 2 * i; j <= n; j += i)
+            {
+                A[j] = false;
+            }
+    }
+    return A;
 }
