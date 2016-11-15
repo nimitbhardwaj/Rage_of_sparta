@@ -66,7 +66,7 @@ bool *simple_sieve(int n)
     //Array returned needed to be freed
     //Requires cstring
     bool *A = new bool[n + 5];
-    memset(A, true, (n + 5) * sizeof(bool));
+    std::memset(A, true, (n + 5) * sizeof(bool));
     A[0] = A[1] = false;
     for(int i = 2; i * i <= n; i++)
     {
