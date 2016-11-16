@@ -3,6 +3,7 @@
 #include "rage_of_sparta.h"
 #include<iostream>
 #include<cstring>
+static int *__lookUpTable(const std::string &T);
 int *KMP(const std::string &S, const std::string &T)
 {
     //Array A need to be deleted
@@ -34,7 +35,7 @@ int *KMP(const std::string &S, const std::string &T)
     return A;
 }
 
-int *__lookUpTable(const std::string &T)
+static int *__lookUpTable(const std::string &T)
 {
     //array is needed to be freed
     //Requires String, and used by KMP function
