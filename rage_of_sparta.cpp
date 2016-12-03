@@ -83,3 +83,21 @@ bool *simple_sieve(int n)
     }
     return A;
 }
+
+
+int gcd(int a, int b)
+{
+    if(a > b)
+    {
+        int tmp = a;
+        a = b;
+        b = a;
+    }
+    while(a)
+    {
+        int tmp = a;
+        a = b % a;
+        b = tmp;
+    }
+    return b;
+}
