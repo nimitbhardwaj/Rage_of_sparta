@@ -1,6 +1,6 @@
 #include<string>
 #define STR
-#include "rage_of_sparta.h"
+#include "general_algo.h"
 #include<iostream>
 #include<cstring>
 static int *__lookUpTable(const std::string &T);
