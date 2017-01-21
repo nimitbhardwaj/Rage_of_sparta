@@ -103,3 +103,8 @@ int gcd(int a, int b)
     }
     return b;
 }
+
+bool odd_even(int a)
+{
+    return a % 2;
+}
